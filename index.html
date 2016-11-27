@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <head>
-<link rel="stylesheet" href="main.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<title>Test task for frontend-science</title>
+<title>hw1_3</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-  <input id="mvName" placeholder="Search...">
-  <button id="startSearch">Search</button>
-  <div id="container"></div>
-<script src="main.js"></script>
+  <div class="container">
+    <h2>Find movie by name</h2>
+    <input class="input-lg" style="width:80%" type="text" id="query" placeholder="Search...">
+    <button class="btn btn-primary btn-lg" onclick="onSearch()">Search</button>
+  </div>
+  <br>
+  <div class="container" id="table-container">
+    <table class="table table-striped">
+      <thead>
+        <tr role="button">
+          <th data-key="id" data-text="ID" data-type="number"></th>
+          <th data-key="adult" data-text="Adult" data-type="string"></th>
+          <th data-key="original_title" data-text="Original Title" data-type="string"></th>
+          <th data-key="original_language" data-text="Language" data-type="string"></th>
+          <th data-key="popularity" data-text="Popularity Index" data-type="number"></th>
+          <th data-key="vote_count" data-text="Votes Count" data-type="number"></th>
+          <th data-key="vote_average" data-text="Rating" data-type="number"></th>
+          <th data-key="release_date" data-text="Release Date" data-type="string"></th>
+        </tr>
+      <thead>
+      <tbody id="table-body">
+      </tbody>
+    </table>
+  </div>
+  <script src="main.js"></script>
 </body>
 </html>
