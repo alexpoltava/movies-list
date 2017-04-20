@@ -32,7 +32,7 @@ const getMoviesList = url => {
     if (response.ok) {
       return response.json();
     } else {
-      console.error(response);
+      throw new Error(response);
     }
   });
 };
@@ -67,8 +67,7 @@ const setOnClickHandlers = table => {
 };
 
 const saveSearchResults = movies => {
-  while (moviesCached.movies.length)
-    moviesCached.movies.pop();
+  moviesCached.movies.length = 0;
   while (movies.length)
     moviesCached.movies.unshift(movies.pop());
 };
